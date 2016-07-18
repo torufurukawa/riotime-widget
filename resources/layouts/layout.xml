@@ -1,3 +1,5 @@
 <layout id="MainLayout">
     <label id="HeaderLabel" x="center" y="0" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_XTINY" text="RIO Time"/>
+	<label id="LocalTimeLabel" x="center" y="20" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_MEDIUM" text="Local \nTue 10  5:23 AM"/>
+	<label id="RioTimeLabel" x="center" y="80" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_MEDIUM" text=" RIO \nTue 10  5:23 AM"/>
 </layout>
