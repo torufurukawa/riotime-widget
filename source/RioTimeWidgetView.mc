@@ -1,4 +1,7 @@
 using Toybox.WatchUi as Ui;
+using Toybox.Time as Time;
+using Toybox.System as System;
+
 
 class RioTimeWidgetView extends Ui.View {
 
@@ -29,6 +32,21 @@ class RioTimeWidgetView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc) {
+    	var now = Time.now();
+    	
+    	// local time
+    	// determin local offset
+    	var localOffset = new Time.Duration(System.getClockTime().timeZoneOffset);
+    	// format
+    	var localNow = now;  //.add(localOffset);
+    	var info = Time.Gregorian.info(localNow, Time.FORMAT_MEDIUM);
+    	// todo: AM/PM
+    	// todo: better format of hour
+		var text = Lang.format("$1$ $2$ $3$:$4$", [info.day_of_week, info.day, info.hour, info.min]);
+    	// update text
+        var localTimeLabel = View.findDrawableById("LocalTimeLabel");
+        localTimeLabel.setText(text);
+
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
