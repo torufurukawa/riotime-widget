@@ -35,17 +35,30 @@ class RioTimeWidgetView extends Ui.View {
     	var now = Time.now();
     	
     	// local time
-    	// determin local offset
-    	var localOffset = new Time.Duration(System.getClockTime().timeZoneOffset);
     	// format
-    	var localNow = now;  //.add(localOffset);
+    	var localNow = now;
     	var info = Time.Gregorian.info(localNow, Time.FORMAT_MEDIUM);
-    	// todo: AM/PM
-    	// todo: better format of hour
-		var text = Lang.format("$1$ $2$ $3$:$4$", [info.day_of_week, info.day, info.hour, info.min]);
+    	// AM/PM
+    	var mod = "AM";
+    	if (12 <= info.hour) {
+    		mod = "PM";
+    	}
+    	// hour
+    	var hour = info.hour;
+    	if (12 <= hour) {
+    		hour = hour - 12;
+    	}
+    	var hour_pad = "";
+    	if (hour < 10) {
+    		hour_pad = " ";
+    	} 
+		var text = Lang.format("$1$ $2$ $6$$3$:$4$ $5$", [info.day_of_week, info.day, hour, info.min, mod, hour_pad]);
     	// update text
         var localTimeLabel = View.findDrawableById("LocalTimeLabel");
         localTimeLabel.setText(text);
+
+
+    	//var localOffset = new Time.Duration(System.getClockTime().timeZoneOffset);
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
