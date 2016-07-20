@@ -3,6 +3,9 @@ using Toybox.Time as Time;
 using Toybox.System as System;
 
 
+const RIO_OFFSET = -3 * 60 * 60;
+
+
 class RioTimeWidgetView extends Ui.View {
 
     function initialize() {
@@ -36,9 +39,15 @@ class RioTimeWidgetView extends Ui.View {
     	
     	// local time
         var localTimeLabel = View.findDrawableById("LocalTimeLabel");
-        localTimeLabel.setText(formatMoment(now));
-
-    	//var localOffset = new Time.Duration(System.getClockTime().timeZoneOffset);
+        localTimeLabel.setText("Local\n" + formatMoment(now));
+        
+        // Rio time
+    	var localOffset = System.getClockTime().timeZoneOffset;
+    	var rioOffset = RIO_OFFSET;
+    	var rioNow = now.add(new Time.Duration(rioOffset - localOffset));
+        var rioTimeLabel = View.findDrawableById("RioTimeLabel");
+        rioTimeLabel.setText("Rio\n" + formatMoment(rioNow));
+    	
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
