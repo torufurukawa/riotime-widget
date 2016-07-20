@@ -35,9 +35,18 @@ class RioTimeWidgetView extends Ui.View {
     	var now = Time.now();
     	
     	// local time
-    	// format
-    	var localNow = now;
-    	var info = Time.Gregorian.info(localNow, Time.FORMAT_MEDIUM);
+        var localTimeLabel = View.findDrawableById("LocalTimeLabel");
+        localTimeLabel.setText(formatMoment(now));
+
+    	//var localOffset = new Time.Duration(System.getClockTime().timeZoneOffset);
+
+        // Call the parent onUpdate function to redraw the layout
+        View.onUpdate(dc);
+    }
+    
+    function formatMoment(moment) {
+    	var info = Time.Gregorian.info(moment, Time.FORMAT_MEDIUM);
+
     	// AM/PM
     	var mod = "AM";
     	if (12 <= info.hour) {
@@ -51,17 +60,13 @@ class RioTimeWidgetView extends Ui.View {
     	var hour_pad = "";
     	if (hour < 10) {
     		hour_pad = " ";
-    	} 
-		var text = Lang.format("$1$ $2$ $6$$3$:$4$ $5$", [info.day_of_week, info.day, hour, info.min, mod, hour_pad]);
-    	// update text
-        var localTimeLabel = View.findDrawableById("LocalTimeLabel");
-        localTimeLabel.setText(text);
+    	}
+    	
+    	// day of week in 3 letters
+    	var dayOfWeek = info.day_of_week.substring(0, 3); 
 
-
-    	//var localOffset = new Time.Duration(System.getClockTime().timeZoneOffset);
-
-        // Call the parent onUpdate function to redraw the layout
-        View.onUpdate(dc);
+		var text = Lang.format("$1$ $2$ $6$$3$:$4$ $5$", [dayOfWeek, info.day, hour, info.min, mod, hour_pad]);
+		return text;
     }
 
     //! Called when this View is removed from the screen. Save the
