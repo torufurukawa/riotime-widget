@@ -20,7 +20,7 @@ class MenuDelegate extends Ui.MenuInputDelegate {
 
 	function onMenuItem(item) {
 		if (item == :now) {
-			Application.getApp().setProperty("referenceType", "now");
+			Utils.setProperty("referenceType", "now");
 		}
 		return true;
 	}

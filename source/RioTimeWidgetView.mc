@@ -36,7 +36,8 @@ class RioTimeWidgetView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc) {
-    	Toybox.Application.getApp().getProperty("referenceType");
+    	var refType = Utils.getProperty("referenceType");
+    	Utils.log(refType);
 
     	var now = Time.now();
     	
