@@ -88,6 +88,10 @@ class RioTimeWidgetView extends Ui.View {
 
 class RioTimeWidgetViewDelegate extends Ui.BehaviorDelegate {
 	function onSelect() {
-		System.println("### SELECT");
+		var menu = new Ui.Menu();
+		menu.setTitle("Set Time");
+		menu.addItem("foo", :foo);
+		Ui.pushView(menu, new MenuInputDelegate(), Ui.SLIDE_IMMEDIATE);
+		return true;
 	}
 }
