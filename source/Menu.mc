@@ -1,4 +1,7 @@
+using Toybox.Application as Application;
 using Toybox.WatchUi as Ui;
+using Toybox.System;
+
 
 class Menu extends Ui.Menu {
 	function initialize() {
@@ -15,8 +18,10 @@ class MenuDelegate extends Ui.MenuInputDelegate {
 		Ui.MenuInputDelegate.initialize();
 	}
 
-	function onMenuInput(item) {
+	function onMenuItem(item) {
 		if (item == :now) {
+			Application.getApp().setProperty("referenceType", "now");
 		}
+		return true;
 	}
 }

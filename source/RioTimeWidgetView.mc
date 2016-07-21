@@ -1,3 +1,4 @@
+using Toybox.Application;
 using Toybox.WatchUi as Ui;
 using Toybox.Time as Time;
 using Toybox.System as System;
@@ -35,6 +36,8 @@ class RioTimeWidgetView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc) {
+    	Toybox.Application.getApp().getProperty("referenceType");
+
     	var now = Time.now();
     	
     	// local time
