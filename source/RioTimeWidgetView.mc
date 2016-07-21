@@ -1,3 +1,4 @@
+using Toybox.Application;
 using Toybox.WatchUi as Ui;
 using Toybox.Time as Time;
 using Toybox.System as System;
@@ -35,6 +36,8 @@ class RioTimeWidgetView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc) {
+    	Toybox.Application.getApp().getProperty("referenceType");
+
     	var now = Time.now();
     	
     	// local time
@@ -87,11 +90,12 @@ class RioTimeWidgetView extends Ui.View {
 
 
 class RioTimeWidgetViewDelegate extends Ui.BehaviorDelegate {
+	function initialize() {
+		Ui.BehaviorDelegate.initialize();
+	}
+
 	function onSelect() {
-		var menu = new Ui.Menu();
-		menu.setTitle("Set Time");
-		menu.addItem("foo", :foo);
-		Ui.pushView(menu, new MenuInputDelegate(), Ui.SLIDE_IMMEDIATE);
+		Ui.pushView(new Menu(), new MenuDelegate(), Ui.SLIDE_IMMEDIATE);
 		return true;
 	}
 }
