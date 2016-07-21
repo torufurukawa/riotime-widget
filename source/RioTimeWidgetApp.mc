@@ -16,7 +16,7 @@ class RioTimeWidgetApp extends App.AppBase {
 
     //! Return the initial view of your application here
     function getInitialView() {
-        return [ new RioTimeWidgetView() ];
+        return [ new RioTimeWidgetView(), new RioTimeWidgetViewDelegate() ];
     }
 
 }

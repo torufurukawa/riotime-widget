@@ -83,5 +83,11 @@ class RioTimeWidgetView extends Ui.View {
     //! memory.
     function onHide() {
     }
+}
 
+
+class RioTimeWidgetViewDelegate extends Ui.BehaviorDelegate {
+	function onSelect() {
+		System.println("### SELECT");
+	}
 }
