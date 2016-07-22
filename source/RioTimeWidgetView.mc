@@ -36,8 +36,8 @@ class RioTimeWidgetView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc) {
-    	var refType = Utils.getProperty("referenceType");
-    	Utils.log(refType);
+    	var refType =Properties.get("referenceType");
+    	Logger.log(refType);
 
     	var now = Time.now();
     	
