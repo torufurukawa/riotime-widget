@@ -36,8 +36,8 @@ class RioTimeWidgetView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc) {
-    	var refType = Utils.getProperty("referenceType");
-    	Utils.log(refType);
+    	var refType =Properties.get("referenceType");
+    	Logger.log(refType);
 
     	var now = Time.now();
     	
@@ -52,7 +52,6 @@ class RioTimeWidgetView extends Ui.View {
         var rioTimeLabel = View.findDrawableById("RioTimeLabel");
         rioTimeLabel.setText("Rio\n" + formatMoment(rioNow));
     	
-
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }

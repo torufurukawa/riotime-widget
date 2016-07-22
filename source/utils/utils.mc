@@ -1,16 +1,20 @@
 using Toybox.System;
 using Toybox.Application;
 
-module Utils {
-	function log(value) {
-		return System.println(value);
-	}
-	
-	function setProperty(key, value) {
+
+module Properties {
+	function set(key, value) {
 		return Application.getApp().setProperty(key, value);
 	}
 	
-	function getProperty(key) {
+	function get(key) {
 		return Application.getApp().getProperty(key);
+	}
+}
+
+
+module Logger {
+	function log(value) {
+		return System.println(value);
 	}
 }
