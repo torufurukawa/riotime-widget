@@ -52,7 +52,6 @@ class RioTimeWidgetView extends Ui.View {
         var rioTimeLabel = View.findDrawableById("RioTimeLabel");
         rioTimeLabel.setText("Rio\n" + formatMoment(rioNow));
     	
-
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }

@@ -13,6 +13,7 @@ class Menu extends Ui.Menu {
 	}
 }
 
+
 class MenuDelegate extends Ui.MenuInputDelegate {
 	function initialize() {
 		Ui.MenuInputDelegate.initialize();
