@@ -23,6 +23,5 @@ class MenuDelegate extends Ui.MenuInputDelegate {
 		if (item == :now) {
 			Properties.set("referenceType", "now");
 		}
-		return true;
 	}
 }
