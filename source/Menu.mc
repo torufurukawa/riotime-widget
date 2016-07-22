@@ -8,8 +8,8 @@ class Menu extends Ui.Menu {
 		Ui.Menu.initialize();
 		self.setTitle("Set time to");
 		self.addItem("Now", :now);
-		self.addItem("Local", :now);
-		self.addItem("Rio", :now);
+		self.addItem("Local", :local);
+		self.addItem("Rio", :rio);
 	}
 }
 
@@ -22,6 +22,13 @@ class MenuDelegate extends Ui.MenuInputDelegate {
 	function onMenuItem(item) {
 		if (item == :now) {
 			Properties.set("referenceType", "now");
+			return;
 		}
+		
+		Logger.log("hoge");
+		var menu = new Menu();
+		menu.setTitle("DATE MENU");
+		menu.addItem("foo", :foo);
+		Ui.pushView(menu, new MenuInputDelegate(), Ui.SLIDE_IMMEDIATE);
 	}
 }
