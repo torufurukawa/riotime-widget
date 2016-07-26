@@ -25,6 +25,6 @@ class MenuDelegate extends Ui.MenuInputDelegate {
 			return;
 		}
 		
-		Ui.pushView(new DrumView(), new DrumViewDelegate(), Ui.SLIDE_IMMEDIATE);
+		Ui.switchToView(new DrumView(), new DrumViewDelegate(), Ui.SLIDE_IMMEDIATE);
 	}
 }
