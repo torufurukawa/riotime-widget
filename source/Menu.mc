@@ -25,10 +25,6 @@ class MenuDelegate extends Ui.MenuInputDelegate {
 			return;
 		}
 		
-		Logger.log("hoge");
-		var menu = new Menu();
-		menu.setTitle("DATE MENU");
-		menu.addItem("foo", :foo);
-		Ui.pushView(menu, new MenuInputDelegate(), Ui.SLIDE_IMMEDIATE);
+		Ui.pushView(new DrumView(), new DrumViewDelegate(), Ui.SLIDE_IMMEDIATE);
 	}
 }
