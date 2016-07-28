@@ -20,11 +20,22 @@ class MenuDelegate extends Ui.MenuInputDelegate {
 	}
 
 	function onMenuItem(item) {
+		var refType;
 		if (item == :now) {
-			Properties.set("referenceType", "now");
+			refType = "now";	
+		} else if (item == :local) {
+			refType = "local";
+		} else {
+			refType = "rio";
+		}
+		Properties.set("referenceType", refType);
+		
+		// if "now" is selected, save it and return immediately
+		if (item == :now) {
 			return;
 		}
 		
+		// else, transit to drum view
 		Ui.switchToView(new DrumView(), new DrumViewDelegate(), Ui.SLIDE_IMMEDIATE);
 	}
 }

@@ -13,11 +13,7 @@ class DrumViewDelegate extends Ui.BehaviorDelegate {
 		BehaviorDelegate.initialize();
 	}
 	
-	 function onNextMode() {
-	 	Logger.log("Next Mode");
-	 }
-
-	 function onNextPage() {
+	function onNextPage() {
 	 	Logger.log("Next Page");
-	 }
+	}
 }

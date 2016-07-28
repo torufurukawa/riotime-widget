@@ -37,7 +37,7 @@ class RioTimeWidgetView extends BaseView {
     	var rioNow = now.add(new Time.Duration(rioOffset - localOffset));
         var rioTimeLabel = View.findDrawableById("RioTimeLabel");
         rioTimeLabel.setText("Rio\n" + formatMoment(rioNow));
-    	
+        
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
     }
