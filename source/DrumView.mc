@@ -2,8 +2,11 @@ using Toybox.WatchUi as Ui;
 
 
 class DrumView extends Ui.View {
+	var location;
+
 	function initialize(location) {
 		View.initialize();
+		self.location = location;
 	}
 	
 	function onLayout(dc) {
@@ -11,6 +14,10 @@ class DrumView extends Ui.View {
     }
 	
 	function onUpdate(dc) {
+		self.renderLocation();
+		
+		// render date time
+		
 		//var now = Time.now();
     	
     	//// local time
@@ -26,6 +33,17 @@ class DrumView extends Ui.View {
         
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
+	}
+	
+	function renderLocation() {
+		var text = "";
+		if (self.location == :local) {
+			text = "Local";
+		} else if (self.location == :rio) {
+			text = "Rio";
+		}
+		var label = View.findDrawableById("LocationLabel");
+        label.setText(text);
 	}
 }
 
