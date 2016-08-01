@@ -1,9 +1,9 @@
 using Toybox.WatchUi as Ui;
 
 
-class DrumView extends BaseView {
+class DrumView extends Ui.View {
 	function initialize(location) {
-		BaseView.initialize();
+		View.initialize();
 	}
 	
 	function onLayout(dc) {
