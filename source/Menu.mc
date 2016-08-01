@@ -7,7 +7,8 @@ class Menu extends Ui.Menu {
 	function initialize() {
 		Ui.Menu.initialize();
 		self.addItem("Now", :now);
-		self.addItem("Specific Time", :specific);
+		self.addItem("Local", :local);
+		self.addItem("Rio", :rio);
 	}
 }
 
@@ -25,6 +26,6 @@ class MenuDelegate extends Ui.MenuInputDelegate {
 		}
 		
 		// else, transit to drum view
-		Ui.switchToView(new DrumView(), new DrumViewDelegate(), Ui.SLIDE_IMMEDIATE);
+		Ui.switchToView(new DrumView(item), new DrumViewDelegate(item), Ui.SLIDE_IMMEDIATE);
 	}
 }

@@ -2,9 +2,13 @@ using Toybox.WatchUi as Ui;
 
 
 class DrumView extends BaseView {
-	function initialize() {
+	function initialize(location) {
 		BaseView.initialize();
 	}
+	
+	function onLayout(dc) {
+        setLayout(Rez.Layouts.DrumLayout(dc));
+    }
 	
 	function onUpdate(dc) {
 		//var now = Time.now();
@@ -27,7 +31,7 @@ class DrumView extends BaseView {
 
 
 class DrumViewDelegate extends Ui.BehaviorDelegate {
-	function initialize() {
+	function initialize(location) {
 		BehaviorDelegate.initialize();
 	}
 	
