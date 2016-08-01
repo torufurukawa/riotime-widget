@@ -6,10 +6,8 @@ using Toybox.System;
 class Menu extends Ui.Menu {
 	function initialize() {
 		Ui.Menu.initialize();
-		self.setTitle("Set time to");
 		self.addItem("Now", :now);
-		self.addItem("Local", :local);
-		self.addItem("Rio", :rio);
+		self.addItem("Specific Time", :specific);
 	}
 }
 
@@ -20,18 +18,9 @@ class MenuDelegate extends Ui.MenuInputDelegate {
 	}
 
 	function onMenuItem(item) {
-		var refType;
-		if (item == :now) {
-			refType = "now";	
-		} else if (item == :local) {
-			refType = "local";
-		} else {
-			refType = "rio";
-		}
-		Properties.set("referenceType", refType);
-		
 		// if "now" is selected, save it and return immediately
 		if (item == :now) {
+			Properties.set("referenceType", "now");
 			return;
 		}
 		
