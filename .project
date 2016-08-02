@@ -14,4 +14,16 @@
 	<natures>
 		<nature>connectiq.projectNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>source/Menu.mc</name>
+			<type>1</type>
+			<location>/Users/toru/Documents/workspace/RioTimeWidget/source/Menu.mc</location>
+		</link>
+		<link>
+			<name>source/RioTimeWidgetView.mc</name>
+			<type>1</type>
+			<location>/Users/toru/Documents/workspace/RioTimeWidget/source/RioTimeWidgetView.mc</location>
+		</link>
+	</linkedResources>
 </projectDescription>

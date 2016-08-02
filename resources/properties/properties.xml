@@ -1,3 +1,4 @@
 <properties>
 	<property id="referenceType" type="string">now</property>
+	<property id="referenceTime" type="number">0</property>
 </properties>
