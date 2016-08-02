@@ -9,5 +9,6 @@
 	<layout id="DrumLayout">
 		<label id="LocationLabel" x="center" y="0" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_MEDIUM" text="Local"/>
 		<label id="TimeLabel" x="center" y="50" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_LARGE" text="Tue 10\n5:23 AM"/>
+		<drawable id="HorizontalSigns"/>
 	</layout>
 </layouts> 
