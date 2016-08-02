@@ -42,13 +42,13 @@ class DrumView extends Ui.View {
 	function renderTime() {
 		// get reference time
 		var moment = self.refMoment;
-		Logger.log(moment.value());
+		Logger.log("referenceTime(UTC)="+moment.value().toString());
 		// add timezone difference if rio time
 		if (self.location == :rio) {
 			var localOffset = System.getClockTime().timeZoneOffset; 
 			moment = moment.add(new Time.Duration(RIO_OFFSET - localOffset));
 		}
-		Logger.log(moment.value());
+		Logger.log("referenceTime(zoned)="+moment.value().toString());
 		// format time
 		var text = formatDate(moment) + "\n" + formatTime(moment);
 		// set text
