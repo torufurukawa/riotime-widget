@@ -4,9 +4,6 @@ using Toybox.Time as Time;
 using Toybox.System as System;
 
 
-const RIO_OFFSET = -3 * 60 * 60;
-
-
 class RioTimeWidgetView extends Ui.View {
 
     function initialize() {
@@ -42,42 +39,17 @@ class RioTimeWidgetView extends Ui.View {
     	
     	// local time
         var localTimeLabel = View.findDrawableById("LocalTimeLabel");
-        localTimeLabel.setText("Local\n" + formatMoment(now));
+        localTimeLabel.setText("Local\n" + formatDate(now) + " " + formatTime(now));
         
         // Rio time
     	var localOffset = System.getClockTime().timeZoneOffset;
     	var rioOffset = RIO_OFFSET;
     	var rioNow = now.add(new Time.Duration(rioOffset - localOffset));
         var rioTimeLabel = View.findDrawableById("RioTimeLabel");
-        rioTimeLabel.setText("Rio\n" + formatMoment(rioNow));
+        rioTimeLabel.setText("Rio\n" + formatDate(rioNow) + " " + formatTime(rioNow));
         
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
-    }
-    
-    function formatMoment(moment) {
-    	var info = Time.Gregorian.info(moment, Time.FORMAT_MEDIUM);
-
-    	// AM/PM
-    	var mod = "AM";
-    	if (12 <= info.hour) {
-    		mod = "PM";
-    	}
-    	// hour
-    	var hour = info.hour;
-    	if (12 <= hour) {
-    		hour = hour - 12;
-    	}
-    	var hour_pad = "";
-    	if (hour < 10) {
-    		hour_pad = " ";
-    	}
-    	
-    	// day of week in 3 letters
-    	var dayOfWeek = info.day_of_week.substring(0, 3); 
-
-		var text = Lang.format("$1$ $2$ $6$$3$:$4$ $5$", [dayOfWeek, info.day, hour, info.min, mod, hour_pad]);
-		return text;
     }
 
     //! Called when this View is removed from the screen. Save the
