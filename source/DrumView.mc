@@ -1,12 +1,21 @@
 using Toybox.WatchUi as Ui;
+using Toybox.Time as Time;
+
 
 
 class DrumView extends Ui.View {
 	var location;
+	var refMoment;
 
 	function initialize(location) {
 		View.initialize();
+
 		self.location = location;
+
+		// reference time
+		var now = Time.now().value();
+		var roundedTime = now - (now % 3600); 
+		self.refMoment = new Time.Moment(roundedTime);
 	}
 	
 	function onLayout(dc) {
