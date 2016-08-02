@@ -60,6 +60,11 @@ class DrumView extends Ui.View {
 		self.refMoment = self.refMoment.add(new Time.Duration(3600));
 		Logger.log("updated reference time: " + self.refMoment.value().toString());
 	}
+
+	function decrHour() {
+		self.refMoment = self.refMoment.add(new Time.Duration(-3600));
+		Logger.log("updated reference time: " + self.refMoment.value().toString());
+	}
 }
 
 
@@ -74,6 +79,12 @@ class DrumViewDelegate extends Ui.BehaviorDelegate {
 	function onNextPage() {
 	 	Logger.log("detected: next page");
 	 	self.view.incrHour();
+	 	Ui.requestUpdate();
+	}
+
+	function onPreviousPage() {
+	 	Logger.log("detected: prev page");
+	 	self.view.decrHour();
 	 	Ui.requestUpdate();
 	}
 }
