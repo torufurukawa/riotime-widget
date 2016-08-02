@@ -97,5 +97,6 @@ class DrumViewDelegate extends Ui.BehaviorDelegate {
 		Logger.log("detected: select");
 		self.view.save();
 		Ui.popView(SLIDE_IMMEDIATE);		
+		Ui.requestUpdate();
 	}
 }

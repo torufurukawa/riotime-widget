@@ -32,10 +32,16 @@ class RioTimeWidgetView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc) {
-    	var refType =Properties.get("referenceType");
+    	var refType = Properties.get("referenceType");
     	Logger.log("reference type: " + refType);
 
     	var now = Time.now();
+		if (refType.equals("specific")) {
+			var value = Properties.get("referenceTime");
+			Logger.log("reference time: " + value.toString());
+			now = new Time.Moment(value);
+		}
+		Logger.log("time: " + now.value().toString());
     	
     	// local time
         var localTimeLabel = View.findDrawableById("LocalTimeLabel");
