@@ -55,15 +55,25 @@ class DrumView extends Ui.View {
 		var label = View.findDrawableById("TimeLabel");
         label.setText(text);
 	}
+	
+	function incrHour() {
+		self.refMoment = self.refMoment.add(new Time.Duration(3600));
+		Logger.log("updated reference time: " + self.refMoment.value().toString());
+	}
 }
 
 
 class DrumViewDelegate extends Ui.BehaviorDelegate {
-	function initialize(location) {
+	var view;
+	
+	function initialize(view) {
 		BehaviorDelegate.initialize();
+		self.view = view;
 	}
 	
 	function onNextPage() {
-	 	Logger.log("Next Page");
+	 	Logger.log("detected: next page");
+	 	self.view.incrHour();
+	 	Ui.requestUpdate();
 	}
 }

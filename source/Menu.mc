@@ -26,6 +26,7 @@ class MenuDelegate extends Ui.MenuInputDelegate {
 		}
 		
 		// else, transit to drum view
-		Ui.switchToView(new DrumView(item), new DrumViewDelegate(item), Ui.SLIDE_IMMEDIATE);
+		var view = new DrumView(item);
+		Ui.switchToView(view, new DrumViewDelegate(view), Ui.SLIDE_IMMEDIATE);
 	}
 }
