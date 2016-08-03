@@ -1,0 +1,23 @@
+<resources>
+	<drawables>
+	    <drawable-list id="LowerBorder" x="0" y="95" width="fill" height="1" background="Gfx.COLOR_WHITE"/>
+	    <drawable-list id="Signs" x="0" y="0" width="fill" height="fill">
+		    <bitmap id="UpSign" filename="../resources/drawables/up.png" x="92" y="0"/>
+		    <bitmap id="DownSign" filename="../resources/drawables/down.png" x="92" y="128"/>
+	    </drawable-list>
+	</drawables>
+	<layouts>
+		<layout id="MainLayout">
+			<drawable id="UpperBorder"/>
+			<drawable id="LowerBorder"/>
+		    <label id="HeaderLabel" x="center" y="0" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_XTINY" text="rio-clock.com"/>
+			<label id="LocalTimeLabel" x="center" y="35" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_MEDIUM" text="Local \nTue 10  5:23 AM"/>
+			<label id="RioTimeLabel" x="center" y="105" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_MEDIUM" text=" RIO \nTue 10  5:23 AM"/>
+		</layout>
+		<layout id="DrumLayout">
+			<label id="LocationLabel" x="center" y="30" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_MEDIUM" text="Local"/>
+			<label id="TimeLabel" x="center" y="60" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_LARGE" text="Tue 10\n5:23 AM"/>
+			<drawable id="Signs"/>
+		</layout>
+	</layouts>
+</resources>
