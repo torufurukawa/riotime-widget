@@ -1,7 +1,7 @@
 <resources>
 	<drawables>
 	    <drawable-list id="LowerBorder" x="0" y="100" width="fill" height="1" background="Gfx.COLOR_WHITE"/>
-	    <drawable-list id="HorizontalSigns" x="0" y="dc.getHeight()/2-10" width="fill" height="fill">
+	    <drawable-list id="Signs" x="0" y="dc.getHeight()/2-10" width="fill" height="fill">
 		    <bitmap id="LeftSign" filename="../resources/drawables/left.png" x="0" y="0"/>
 		    <bitmap id="RightSign" filename="../resources/drawables/right.png" x="195" y="0"/>
 	    </drawable-list>
