@@ -2,7 +2,7 @@
     <bitmap id="LauncherIcon" filename="riotime_icon.png" />
     <drawable-list id="UpperBorder" x="0" y="20" width="fill" height="1" background="Gfx.COLOR_WHITE"/>
     <drawable-list id="LowerBorder" x="0" y="80" width="fill" height="1" background="Gfx.COLOR_WHITE"/>
-    <drawable-list id="HorizontalSigns" x="0" y="dc.getHeight()/2" width="fill" height="fill">
+    <drawable-list id="Signs" x="0" y="dc.getHeight()/2-10" width="fill" height="fill">
 	    <bitmap id="LeftSign" filename="left.png" x="0" y="0"/>
 	    <bitmap id="RightSign" filename="right.png" x="180" y="0"/>
     </drawable-list>
