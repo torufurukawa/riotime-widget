@@ -1,0 +1,18 @@
+<resources>
+	<drawables>
+	    <drawable-list id="LowerBorder" x="0" y="100" width="fill" height="1" background="Gfx.COLOR_WHITE"/>
+	    <drawable-list id="HorizontalSigns" x="0" y="dc.getHeight()/2-10" width="fill" height="fill">
+		    <bitmap id="LeftSign" filename="../resources/drawables/left.png" x="0" y="0"/>
+		    <bitmap id="RightSign" filename="../resources/drawables/right.png" x="195" y="0"/>
+	    </drawable-list>
+	</drawables>
+	<layouts>
+		<layout id="MainLayout">
+			<drawable id="UpperBorder"/>
+			<drawable id="LowerBorder"/>
+		    <label id="HeaderLabel" x="center" y="0" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_XTINY" text="rio-clock.com"/>
+			<label id="LocalTimeLabel" x="center" y="35" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_MEDIUM" text="Local \nTue 10  5:23 AM"/>
+			<label id="RioTimeLabel" x="center" y="110" justification="Gfx.TEXT_JUSTIFY_CENTER" font="Gfx.FONT_MEDIUM" text=" RIO \nTue 10  5:23 AM"/>
+		</layout>
+	</layouts>
+</resources>
